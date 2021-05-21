@@ -7,20 +7,20 @@ namespace FindTheDifference
         public char FindTheDifference(string s, string t)
         {
             const int charModifier = 97;
-            Span<int> lettersS = stackalloc int[26];
-            Span<int> lettersT = stackalloc int[26];
+            Span<int> letters = stackalloc int[26];
 
             for (int i = 0; i < s.Length; i++)
             {
-                lettersS[s[i] - charModifier]++;
-                lettersT[t[i] - charModifier]++;
+                letters[s[i] - charModifier]++;
+                letters[t[i] - charModifier] += 10000;
             }
 
-            lettersT[t[^1] - charModifier]++;
+            letters[t[^1] - charModifier] += 10000;
 
             for (int i = 0; i < 26; i++)
             {
-                if (lettersS[i] != lettersT[i]) return (char)(i + charModifier);
+                int count = letters[i];
+                if (count / 10000 != count % 1000) return (char)(i + charModifier);
             }
 
             throw new InvalidOperationException("no new letter was added");
