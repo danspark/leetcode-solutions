@@ -9,3 +9,8 @@
 
 - [Problem](https://leetcode.com/problems/find-the-difference)
 - [Solution](https://github.com/danspark/leetcode-solutions/tree/master/find-the-difference)
+
+## Single Number
+
+- [Problem](https://leetcode.com/problems/single-number)
+- [Solution](https://github.com/danspark/leetcode-solutions/tree/master/single-number)
